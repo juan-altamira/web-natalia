@@ -62,7 +62,8 @@ const appState = {
         'Pedido de laboratorio bioquímico ampliado (vitaminas, minerales, hormonas y marcadores de estrés)',
         'Definición de objetivos consensuados sin apuros ni relojes'
       ],
-      tags: ['Primera vez', 'Panel bioquímico', 'Sin reloj']
+      tags: ['Primera vez', 'Panel bioquímico', 'Sin reloj'],
+      ctaText: 'Reservar primera consulta'
     },
     {
       id: 2,
@@ -81,7 +82,8 @@ const appState = {
         'Revisión de hábitos de descanso, alimentación y movimiento',
         'Integración con nutrición, psicología u osteopatía si corresponde'
       ],
-      tags: ['Laboratorio', 'Suplementación', 'Seguimiento']
+      tags: ['Laboratorio', 'Suplementación', 'Seguimiento'],
+      ctaText: 'Reservar seguimiento'
     },
     {
       id: 3,
@@ -100,7 +102,8 @@ const appState = {
         'Manejo de fatiga vespertina y despertares nocturnos sin descanso',
         'Adaptógenos y fitoterapia con respaldo científico'
       ],
-      tags: ['PNIE', 'Sueño profundo', 'Cronobiología']
+      tags: ['PNIE', 'Sueño profundo', 'Cronobiología'],
+      ctaText: 'Reservar consulta de estrés'
     },
     {
       id: 4,
@@ -119,7 +122,8 @@ const appState = {
         'Abordaje del eje intestino-cerebro, permeabilidad e hinchazón',
         'Estrategias naturales que respetan la fisiología individual'
       ],
-      tags: ['Fitomedicina', 'Hongos funcionales', 'Eje intestino-cerebro']
+      tags: ['Fitomedicina', 'Hongos funcionales', 'Eje intestino-cerebro'],
+      ctaText: 'Reservar consulta de fitoterapia'
     }
   ],
 
@@ -131,7 +135,8 @@ const appState = {
       time: '15:00 hs',
       date: 'Jueves 15 de Octubre',
       name: 'Marcos Rodríguez',
-      email: 'marcos.rodriguez@email.com',
+      insurance: 'OSDE 210',
+      email: 'OSDE 210',
       phone: '+54 9 341 555-8899',
       serviceId: 1,
       serviceName: 'Consulta Médica Integrativa (Primera vez)',
@@ -148,7 +153,8 @@ const appState = {
       time: '10:00 hs',
       date: 'Jueves 15 de Octubre',
       name: 'Camila Valenzuela',
-      email: 'camilav@gmail.com',
+      insurance: 'Swiss Medical SMG20',
+      email: 'Swiss Medical SMG20',
       phone: '+54 9 11 2233-4455',
       serviceId: 4,
       serviceName: 'Fitoterapia, Hongos Medicinales y Microbiota',
@@ -165,7 +171,8 @@ const appState = {
       time: '11:30 hs',
       date: 'Jueves 15 de Octubre',
       name: 'Esteban Gómez',
-      email: 'esteban.g@empresa.com.ar',
+      insurance: 'IAPOS',
+      email: 'IAPOS',
       phone: '+54 9 341 448-9900',
       serviceId: 2,
       serviceName: 'Consulta de Seguimiento y Evolución',
@@ -182,7 +189,8 @@ const appState = {
       time: '17:30 hs',
       date: 'Jueves 15 de Octubre',
       name: 'Dra. Luciana Peralta',
-      email: 'luciana.peralta@hospital.org.ar',
+      insurance: 'Particular',
+      email: 'Particular',
       phone: '+54 9 342 667-1122',
       serviceId: 3,
       serviceName: 'Medicina del Estrés y Regulación del Descanso',
@@ -286,12 +294,9 @@ function initThemeToggle() {
   if (savedTheme === 'dark') {
     document.documentElement.classList.add('dark');
     updateThemeUI(true);
-  } else if (savedTheme === 'light') {
+  } else {
     document.documentElement.classList.remove('dark');
     updateThemeUI(false);
-  } else {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    updateThemeUI(prefersDark);
   }
 
   navToggle?.addEventListener('click', toggle);
@@ -493,44 +498,47 @@ function renderPublicServices() {
   const activeServices = appState.services.filter(s => s.active);
 
   activeServices.forEach((s, idx) => {
-    const row = document.createElement('article');
-    row.className = 'service-row reveal';
-    row.style.setProperty('--d', `${idx * 0.08}s`);
+    const card = document.createElement('article');
+    card.className = 'service-card reveal';
+    card.style.setProperty('--d', `${idx * 0.08}s`);
 
-    const tagsHtml = (s.tags || s.features.slice(0, 3)).map(t => `<span class="chip">${t}</span>`).join('');
+    const tagsHtml = (s.tags || s.features.slice(0, 3)).map(t => `<span class="service-pill">${t}</span>`).join('');
+    const ctaText = s.ctaText || 'Reservar consulta';
 
-    row.innerHTML = `
-      <div class="service-row-title">
-        <h3>
-          <button type="button" onclick="openServiceDetail(${s.id})">
-            ${s.title}
-          </button>
-        </h3>
-        <span class="for">${s.modality}</span>
-      </div>
-
-      <div class="service-row-desc">
-        <p>${s.description}</p>
-        <div class="chips">
+    card.innerHTML = `
+      <div class="service-card-header">
+        <div class="service-card-meta-line">
+          <span class="service-modality-badge">${s.modality}</span>
+          <span class="service-duration-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+            ${s.duration}
+          </span>
+        </div>
+        <h3 class="service-card-title">${s.title}</h3>
+        <p class="service-card-desc">${s.description}</p>
+        <div class="service-card-tags">
           ${tagsHtml}
         </div>
       </div>
 
-      <div class="service-row-meta">
-        <div class="service-price-val">${s.price}</div>
-        <div class="service-time-lbl">${s.duration}</div>
-      </div>
-
-      <div class="service-row-go">
-        <button type="button" aria-label="Ver detalles de ${s.title}" onclick="openServiceDetail(${s.id})">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </button>
+      <div class="service-card-footer">
+        <div class="service-price-block">
+          <div class="service-price-amount">${s.price}</div>
+          <span class="service-price-sub">${s.duration} · ${s.modality}</span>
+        </div>
+        <div class="service-card-actions">
+          <button class="btn btn-primary btn-block open-booking-modal-btn" type="button" onclick="openBookingModal(${s.id})">
+            ${ctaText}
+            <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <button class="service-view-detail-btn" type="button" onclick="openServiceDetail(${s.id})">
+            Ver detalle clínico y preparación →
+          </button>
+        </div>
       </div>
     `;
 
-    container.appendChild(row);
+    container.appendChild(card);
   });
 
   // Re-observe new elements
@@ -1184,11 +1192,37 @@ function initBookingWizard() {
   });
   document.getElementById('btnBackToStep2')?.addEventListener('click', () => goToBookingStep(2));
 
+  // Sincronización activa de estilo para selector segmentado de análisis clínicos (Paso 3)
+  const labRadios = document.querySelectorAll('input[name="hasLabs"]');
+  const updateLabSegmentStyles = () => {
+    labRadios.forEach(radio => {
+      const pill = radio.closest('.cs-segment-pill');
+      if (pill) {
+        if (radio.checked) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      }
+    });
+  };
+  labRadios.forEach(radio => {
+    radio.addEventListener('change', updateLabSegmentStyles);
+  });
+  updateLabSegmentStyles();
+
+  // Limpiar clases has-error al escribir
+  ['patientFullName', 'patientWhatsApp', 'patientInsurance'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', (e) => {
+      e.target.closest('.form-group')?.classList.remove('has-error');
+    });
+  });
+
   // Paso 3: Confirmación de reserva
   document.getElementById('btnConfirmBooking')?.addEventListener('click', () => {
     const nameInput = document.getElementById('patientFullName');
     const phoneInput = document.getElementById('patientWhatsApp');
-    const emailInput = document.getElementById('patientEmail');
+    const insuranceInput = document.getElementById('patientInsurance') || document.getElementById('patientEmail');
     const reasonInput = document.getElementById('patientReason');
     const notesInput = document.getElementById('patientClinicalNotes');
     const hasLabsInput = document.querySelector('input[name="hasLabs"]:checked');
@@ -1209,15 +1243,15 @@ function initBookingWizard() {
       phoneInput?.closest('.form-group')?.classList.remove('has-error');
     }
 
-    if (emailInput?.value.trim() && !emailInput.value.includes('@')) {
-      emailInput?.closest('.form-group')?.classList.add('has-error');
+    if (!insuranceInput?.value.trim()) {
+      insuranceInput?.closest('.form-group')?.classList.add('has-error');
       isValid = false;
     } else {
-      emailInput?.closest('.form-group')?.classList.remove('has-error');
+      insuranceInput?.closest('.form-group')?.classList.remove('has-error');
     }
 
     if (!isValid) {
-      showToast('Por favor completá nombre y teléfono para agendarte.', 'info');
+      showToast('Por favor completá los datos requeridos para agendarte.', 'info');
       return;
     }
 
@@ -1227,7 +1261,7 @@ function initBookingWizard() {
 
     const pName = nameInput.value.trim();
     const pPhone = phoneInput.value.trim();
-    const pEmail = emailInput?.value.trim() || '';
+    const pInsurance = insuranceInput?.value.trim() || 'Particular';
     const pReason = reasonInput?.value.trim() || 'Consulta clínica general';
     const pNotes = notesInput?.value.trim() || 'Sin medicación informada';
     const pLabs = hasLabsInput?.value || 'no';
@@ -1262,7 +1296,8 @@ function initBookingWizard() {
       time: `${selectedBookingTime} hs`,
       date: `${day.label}`,
       name: pName,
-      email: pEmail,
+      insurance: pInsurance,
+      email: pInsurance,
       phone: pPhone,
       serviceId: service.id,
       serviceName: service.title,
@@ -1293,6 +1328,7 @@ function initBookingWizard() {
     const day = getSelectedBookingDay();
     const modalityText = getBookingModalityText();
     const pName = document.getElementById('patientFullName')?.value.trim() || 'Paciente';
+    const pInsurance = document.getElementById('patientInsurance')?.value.trim() || 'Particular';
 
     const text = [
       `TURNO RESERVADO · CONSULTORIO DRA. NATALIA FRUTOS`,
@@ -1301,6 +1337,7 @@ function initBookingWizard() {
       `Modalidad: ${modalityText}`,
       `Fecha y hora: ${day.label} a las ${selectedBookingTime} hs`,
       `Paciente: ${pName}`,
+      `Obra social / Plan: ${pInsurance}`,
       `Consultorio: Santa Fe Capital`,
       `WhatsApp de contacto: +54 9 342 555-1234`
     ].join('\n');
@@ -2013,7 +2050,7 @@ function updateAdminDrawer(key) {
 
   if (avatar) avatar.textContent = initials || 'PT';
   if (name) name.textContent = apt.name;
-  if (email) email.textContent = apt.email;
+  if (email) email.textContent = apt.insurance || apt.email || 'Particular';
   if (reason) reason.textContent = `"${apt.reason}"`;
   if (notes) notes.textContent = `${apt.notes} ${apt.hasLabs === 'si' ? '· Trae análisis clínicos.' : ''}`;
   if (statusSelect) statusSelect.value = apt.status;
@@ -2033,7 +2070,8 @@ function renderAdminPatients(searchQuery = '') {
   const filtered = appState.appointments.filter(a => {
     if (!searchQuery) return true;
     return a.name.toLowerCase().includes(searchQuery) ||
-           a.email.toLowerCase().includes(searchQuery) ||
+           (a.insurance && a.insurance.toLowerCase().includes(searchQuery)) ||
+           (a.email && a.email.toLowerCase().includes(searchQuery)) ||
            a.phone.includes(searchQuery);
   });
 
