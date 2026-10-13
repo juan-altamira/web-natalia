@@ -2698,7 +2698,7 @@ html.dark .modal-overlay { background: rgba(0, 0, 0, 0.6); }
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: clamp(40px, 7vh, 80px) 16px;
+  padding: clamp(32px, 5vh, 60px) 16px;
   background: rgba(16, 12, 8, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -2711,22 +2711,50 @@ html.dark .modal-overlay { background: rgba(0, 0, 0, 0.6); }
   position: relative;
   max-width: 520px;
   width: 100%;
-  max-height: none;
-  height: auto;
+  max-height: none !important;
+  height: auto !important;
   background: var(--paper);
   border: 1px solid var(--line-strong);
   border-radius: 28px;
   padding: clamp(16px, 3.5vw, 22px);
   box-shadow: 0 28px 70px -10px rgba(18, 14, 10, 0.5), 0 10px 24px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
-  overflow: visible;
+  overflow: visible !important;
   display: block;
-  transform: none;
+  transform: none !important;
 }
 html.dark .modal-dialog--cita-suite {
   background: #1C1814;
   border-color: rgba(240, 230, 215, 0.16);
   box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 768px) {
+  .modal-overlay--cita-suite {
+    padding: 0 !important;
+    align-items: flex-start !important;
+    background: var(--paper) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  html.dark .modal-overlay--cita-suite {
+    background: #1C1814 !important;
+  }
+  .modal-dialog--cita-suite {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    height: auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 10px 14px 48px !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
 }
 
 /* Barra superior del modal (Cita Suite Frame Header) */
@@ -4688,8 +4716,8 @@ html.dark .clinical-toast.success .clinical-toast-icon { color: #1A1612; backgro
   .contact-list div { grid-template-columns: 1fr; gap: 2px; }
   .faq-answer { padding-right: 0; }
 
-  .modal-overlay { padding: 0; align-items: flex-end; }
-  .modal-dialog { max-height: 94dvh; border-radius: var(--r-l) var(--r-l) 0 0; transform: translateY(40px); }
+  .modal-overlay:not(.modal-overlay--cita-suite) { padding: 0; align-items: flex-end; }
+  .modal-dialog:not(.modal-dialog--cita-suite) { max-height: 94dvh; border-radius: var(--r-l) var(--r-l) 0 0; transform: translateY(40px); }
   .modal-header { padding: 20px 20px 16px; }
   .modal-header h3 { font-size: 1.45rem; }
   .modal-body { padding: 20px; }
