@@ -1,0 +1,218 @@
+{
+  "at": "2026-10-23T05:00:20.033Z",
+  "deployment": "dpl_GftFq86SmaGL6xWfynd9ZuxFWWa8",
+  "source": "cli; no Git association",
+  "origin": "https://natalia-frutos.vercel.app",
+  "files": [
+    {
+      "path": "_astro/PublicLayout.BezRCc-E.css",
+      "bytes": 46331,
+      "sha1": "b02be1dfc6da2828b6e91973dbea727d87f07e90",
+      "sha256": "65586b06b2e28a8537e81cc3603fd1a469e8848050d6d46809563e58c6194f15"
+    },
+    {
+      "path": "_astro/PublicLayout.astro_astro_type_script_index_0_lang.C5aznpb4.js",
+      "bytes": 6239,
+      "sha1": "7138fe69eb943f1bdec003a2aad998f015d240d8",
+      "sha256": "35622b51ebad014dde1e8690282df744e35e2c5df65120ed2eb0f3ba099e2ac1"
+    },
+    {
+      "path": "aula/index.html",
+      "bytes": 2201,
+      "sha1": "9e49d6038738836e063d889357d64a31a381dd46",
+      "sha256": "76b02c2817c60bb9112e777a849ec3d4878e1009640f972dedf949de4506ecdc"
+    },
+    {
+      "path": "consultas/consulta-integrativa-primera-vez/index.html",
+      "bytes": 3496,
+      "sha1": "ded5fcddcd3686418be1b2a7ba5dd7c59c1da3d3",
+      "sha256": "392812954abf54f5e41420ccd5b2d35b1b9af59d8c8bd6601e6be23868e4458e"
+    },
+    {
+      "path": "consultas/consulta-seguimiento-evolucion/index.html",
+      "bytes": 3414,
+      "sha1": "12346c51e5dfec629d9ad92ad760cd59e4a59149",
+      "sha256": "5c90673b01cf09132acebe63896cb71ae4c51fd1b20b79ea6a9629c9347ba4ac"
+    },
+    {
+      "path": "consultas/fitoterapia-microbiota-hongos/index.html",
+      "bytes": 3425,
+      "sha1": "f8552e4a3f355cb7ae4c14133a74fcc3ca1df97b",
+      "sha256": "07c6f29969e84fe8edaa78772d1589b0476493ce1abe3c7b32461c77f3987d0e"
+    },
+    {
+      "path": "consultas/medicina-estres-regulacion-descanso/index.html",
+      "bytes": 3430,
+      "sha1": "402397f9d608f24c60a40a38f014d2f8f35bb652",
+      "sha256": "21a41f4b89278f153f2c9c6eb86caf91b187f2fb4ddb35faffe1b069f529c217"
+    },
+    {
+      "path": "contacto/index.html",
+      "bytes": 2513,
+      "sha1": "2d13e49682f4e94643789f258357938fc325ae85",
+      "sha256": "c239f8423214c29d9544d93eaf642e644d2fd351869f499f385310c7c26ffdc9"
+    },
+    {
+      "path": "cursos/botiquin-fito/index.html",
+      "bytes": 2241,
+      "sha1": "0fb4d30270fc0e8896cbc2e7ac7f0fec55a0e34e",
+      "sha256": "abf94c4b49220c20eb811d4eac312d5c919c37352a94db7bfd763b894ea8000d"
+    },
+    {
+      "path": "cursos/dormir-mejor/index.html",
+      "bytes": 2277,
+      "sha1": "33b453adeecda58e10e6155c94e17b7b24af3d31",
+      "sha256": "f046ab425dd933f7b2164c4f484a532188f88481d9874a994f8fc728817d7d03"
+    },
+    {
+      "path": "cursos/estres-microbiota/index.html",
+      "bytes": 2230,
+      "sha1": "170effc04123acc005557f6de80df2b211279535",
+      "sha256": "0c1202563bd4277f5a6531a1268d4f89ed1805639add31c1c4f46b5dd3066e46"
+    },
+    {
+      "path": "fonts/hanken.woff2",
+      "bytes": 34704,
+      "sha1": "38c3847fadc85a32910d7442570aa7f96c4db540",
+      "sha256": "e9201eddf1d41d0b62253295d869ce3cf65768f7102b797f02c7f8c876b4a9d5"
+    },
+    {
+      "path": "fonts/licenses/hanken.txt",
+      "bytes": 4401,
+      "sha1": "1ef1395038a5ab5a49a2fd8c5bb47b3bc801d4ce",
+      "sha256": "bb93c61eef5b10204ac305aeb3d204ce74c22c40aa8398f9e2c3bdab2263f2d1"
+    },
+    {
+      "path": "fonts/licenses/newsreader.txt",
+      "bytes": 4394,
+      "sha1": "ee4780718a7b20422c905f3cf595e2b0f88b7652",
+      "sha256": "865f0949b59fab5925506f80102dff3d12e8666412daf52d212db969d40adc25"
+    },
+    {
+      "path": "fonts/newsreader-italic.woff2",
+      "bytes": 64520,
+      "sha1": "3f2b7e2b2ef8ef1ed871c31ed5df130ca00c44b3",
+      "sha256": "48bc8861b9b2ca9300747cad4fd6a3b4ac3028d364df00bd1b72097baa75e509"
+    },
+    {
+      "path": "fonts/newsreader.woff2",
+      "bytes": 58084,
+      "sha1": "e599ceb478c46a6cabed4b7284cf525bd3ccda56",
+      "sha256": "62981321d9a3cc7a61a73792729043703fd6112da86e8ec848bb57f088578757"
+    },
+    {
+      "path": "images/consultorio-480.webp",
+      "bytes": 18208,
+      "sha1": "4132dc9b5e6ce05f864f90f6af739f6014d5a294",
+      "sha256": "e13e335dafaf5a2d223acd8f1a8386b1eb99f61f60f4165ac0126f8e613b58dd"
+    },
+    {
+      "path": "images/consultorio-480.webp.json",
+      "bytes": 198,
+      "sha1": "69c7208a2c992698b83a513a8ef27caa14225a63",
+      "sha256": "ef724a5ed26bc69cf00621227fabe60111d1ffbcba50ca9d148b5a986468203e"
+    },
+    {
+      "path": "images/consultorio-800.webp",
+      "bytes": 37400,
+      "sha1": "35b9ed66193123f50ecfa4e19d9963fbc19a7d01",
+      "sha256": "ecfc380d4f1d3baff8b848897b4767ecdd1a04a9ae07cd75662929fc44810817"
+    },
+    {
+      "path": "images/consultorio-800.webp.json",
+      "bytes": 198,
+      "sha1": "1185e4126d6ad3861158d39a7751a438a7ebecb1",
+      "sha256": "b8a7ac60658d7772d85936e8bb5d59559cf5431c6f264cadd0c0fc622c0e94ab"
+    },
+    {
+      "path": "images/curso-480.webp",
+      "bytes": 18214,
+      "sha1": "7b9e720aa60769284dfc33819d9f06be035a425f",
+      "sha256": "c7d25d449ee95e9f8bc89eac7a92873e5c316cbdea27fa518d1e0068624defaf"
+    },
+    {
+      "path": "images/curso-480.webp.json",
+      "bytes": 184,
+      "sha1": "d17360a8b03b6018518183f4c1962594cd83fc5e",
+      "sha256": "b0a7854b53dfad12fd2904aa08e102f63b46f8fe10ddea996d1e8631957b7d06"
+    },
+    {
+      "path": "images/curso-800.webp",
+      "bytes": 37710,
+      "sha1": "282b2d8ea077886b614f33169768e1e3d564451b",
+      "sha256": "06238ab66e025242481b0ad446ce11fd57d24ba985c94929a0b0c6ca83e2e545"
+    },
+    {
+      "path": "images/curso-800.webp.json",
+      "bytes": 184,
+      "sha1": "5acea199886a576c1301417d4147f797135a59df",
+      "sha256": "da66d094fb91a281e70ac18d4f10bea888cbeeb66d58d1514839ce271dddfe46"
+    },
+    {
+      "path": "images/natalia-400.webp",
+      "bytes": 10662,
+      "sha1": "d1a87b772c182c45d2b6f16ded20f902fadea943",
+      "sha256": "ee91e5753b4af2c6812fbc9cf30b48306b85786c342849c57946513a71db1a0a"
+    },
+    {
+      "path": "images/natalia-400.webp.json",
+      "bytes": 196,
+      "sha1": "eb2609944d4da4d5a229ac5c5fb098694dc0868d",
+      "sha256": "82c54dae1f40dd99a9da449017f3d54afb8ba12af93d3fa1d8bebfacc01086a9"
+    },
+    {
+      "path": "images/natalia-640.webp",
+      "bytes": 21742,
+      "sha1": "cc4782723d3c149c69df9e1ae095ba558b3b721c",
+      "sha256": "76b002fdd278c93c31825cc59ea4201b7b771d7cca590ab5592df9b5407f18fb"
+    },
+    {
+      "path": "images/natalia-640.webp.json",
+      "bytes": 196,
+      "sha1": "a68a204cd3fd818db0dfa4ba01a1cbe185d44c49",
+      "sha256": "467846535ddcc640a7670529b72011e794b60d6de03c724dbff57fba9ae4858d"
+    },
+    {
+      "path": "images/natalia-960.webp",
+      "bytes": 36058,
+      "sha1": "4546317939a80d3a8d7b1cf24f943c536660f033",
+      "sha256": "84959d43daa94dc98d384400c7aae0248b72d202d61552a587f5ca54db7a1734"
+    },
+    {
+      "path": "images/natalia-960.webp.json",
+      "bytes": 196,
+      "sha1": "ced300e8b6e1dfeeb9ee9d5e228692ba44637851",
+      "sha256": "adee49983940dcecdeaf33b4e882b68973919373047c397cb9eb2b2891ff235d"
+    },
+    {
+      "path": "index.html",
+      "bytes": 67471,
+      "sha1": "0180f60a82ba6328cedd1ed4972d0fc6cf426294",
+      "sha256": "dde43c727ca1cb812bc48dec76c9ab0a8f48d24c5823aa331985fb31e66ea849"
+    },
+    {
+      "path": "notas/1/index.html",
+      "bytes": 3272,
+      "sha1": "6db434a4839b2c8a265b04eaf5eddd66e2ec5bb7",
+      "sha256": "2e6b2d2ca9c5981ef5630f11966a344895603cad43d145a6478eea38c257cd06"
+    },
+    {
+      "path": "notas/2/index.html",
+      "bytes": 3043,
+      "sha1": "9c39e9923dcb7104ec439792a7d3d077180c89ca",
+      "sha256": "875a0f44bd8ed424d0021d40ed07050b64b3840244a2a297080b15d694e6e9a3"
+    },
+    {
+      "path": "notas/3/index.html",
+      "bytes": 2747,
+      "sha1": "86a356d839aafbe3f4a784d72641179d2d0c1364",
+      "sha256": "97b0bfe2f9a2093086c150ade132ed0a15ea35332bd26c1d81cf697e0c7258e0"
+    },
+    {
+      "path": "turnos/index.html",
+      "bytes": 2039,
+      "sha1": "67f7a8e19c96c97ffdc43628eb7130189b92f033",
+      "sha256": "1531a88a0157709463e698f9df0ae1497b2975fefaa1b1df36476cc13751b7b1"
+    }
+  ]
+}
